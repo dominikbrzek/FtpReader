@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:sqlitesample.db
+    username: admin
+    password: admin
+    driverClassName: org.sqlite.JDBC
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update
+    show_sql: true
+  flyway:
+    enabled: false
