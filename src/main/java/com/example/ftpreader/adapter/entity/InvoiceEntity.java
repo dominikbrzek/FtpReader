@@ -28,8 +28,8 @@ public class InvoiceEntity {
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private UUID id;
 
-    @Column(name = "CLIENT_ID")
     @ManyToOne
+    @JoinColumn(name = "CLIENT_ID")
     private ClientEntity client;
 
     @Column(name = "CREATION_DATE")
