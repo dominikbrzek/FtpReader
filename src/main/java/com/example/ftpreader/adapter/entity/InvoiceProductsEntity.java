@@ -26,12 +26,12 @@ public class InvoiceProductsEntity {
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private UUID id;
 
-    @Column(name = "INVOICE_ID")
     @ManyToOne
+    @JoinColumn(name = "INVOICE_ID")
     private InvoiceEntity invoice;
 
-    @Column(name = "PRODUCT_ID")
     @ManyToOne
+    @JoinColumn(name = "PRODUCT_ID")
     private ProductEntity product;
 
     @Column(name = "PRODUCT_COUNT")
