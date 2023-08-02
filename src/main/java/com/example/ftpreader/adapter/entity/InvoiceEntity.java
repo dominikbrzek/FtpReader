@@ -1,13 +1,17 @@
 package com.example.ftpreader.adapter.entity;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.JdbcTypeCode;
+import org.w3c.dom.Element;
 
-import java.math.BigInteger;
+import java.math.BigDecimal;
 import java.sql.Types;
 import java.time.LocalDateTime;
 import java.util.UUID;
+
+import static com.example.ftpreader.adapter.service.XMLHelper.getContentFromTag;
 
 /**
  * Invoice entity
@@ -18,8 +22,9 @@ import java.util.UUID;
  * @author dobr
  */
 @Entity
-@Table(name = "INVOICES")
-public class InvoiceEntity {
+@NoArgsConstructor
+@Table(name = "INVOICE")
+public class InvoiceEntity implements DomainEntity {
 
     @Id
     @Column(name = "ID")
@@ -28,7 +33,7 @@ public class InvoiceEntity {
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private UUID id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CLIENT_ID")
     private ClientEntity client;
 
@@ -36,6 +41,15 @@ public class InvoiceEntity {
     private LocalDateTime creationDate;
 
     @Column(name = "SUMMARY_PRICE")
-    private BigInteger summaryPrice;
+    private BigDecimal summaryPrice;
 
+    public InvoiceEntity(Element element) {
+        this.client = new ClientEntity(UUID.fromString(getContentFromTag(element, "clientId")));
+        this.creationDate = LocalDateTime.parse(getContentFromTag(element, "creationDate"));
+        this.summaryPrice = new BigDecimal(getContentFromTag(element, "summaryPrice"));
+    }
+
+    public InvoiceEntity(UUID id) {
+        this.id = id;
+    }
 }
