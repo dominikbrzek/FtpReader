@@ -1,0 +1,32 @@
+<invoiceProducts>
+    <invoiceProduct>
+        <invoiceId>1f531b67-9569-4a9d-b636-76b7edcfa983</invoiceId>
+        <productId>2f6d8c90-720c-4ee1-b3c1-8fb2bf2e6a99</productId>
+        <productsCount>3</productsCount>
+        <productPrice>10.99</productPrice>
+    </invoiceProduct>
+    <invoiceProduct>
+        <invoiceId>3c8d6b1a-289f-4bc6-bf04-c44a88567472</invoiceId>
+        <productId>4a2e8f7b-6738-4287-9e1b-8e654f45e1d2</productId>
+        <productsCount>2</productsCount>
+        <productPrice>5.50</productPrice>
+    </invoiceProduct>
+    <invoiceProduct>
+        <invoiceId>5d4a0e2c-9eb2-42a7-8103-5c82a0d0b3fc</invoiceId>
+        <productId>6e1f9a7d-8b46-4d02-b779-d1c33487a5b4</productId>
+        <productsCount>5</productsCount>
+        <productPrice>8.75</productPrice>
+    </invoiceProduct>
+    <invoiceProduct>
+        <invoiceId>7b3c8e5f-61a9-40e3-9bf7-8e354f6c8d4a</invoiceId>
+        <productId>8d6f2a1c-582e-4d10-8a03-c3456789abcd</productId>
+        <productsCount>1</productsCount>
+        <productPrice>3.25</productPrice>
+    </invoiceProduct>
+    <invoiceProduct>
+        <invoiceId>9c7b3a5d-4612-43f8-b271-9e1234567890</invoiceId>
+        <productId>1e2f3d4c-5b6a-7d8e-9f01-2c3d4e5f6a7b</productId>
+        <productsCount>4</productsCount>
+        <productPrice>6.50</productPrice>
+    </invoiceProduct>
+</invoiceProducts>

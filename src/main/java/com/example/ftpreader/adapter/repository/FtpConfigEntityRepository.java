@@ -3,6 +3,7 @@ package com.example.ftpreader.adapter.repository;
 import com.example.ftpreader.adapter.entity.FtpConfigEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -14,4 +15,6 @@ import java.util.UUID;
  * @author dobr
  */
 public interface FtpConfigEntityRepository extends JpaRepository<FtpConfigEntity, UUID> {
+
+    List<FtpConfigEntity> findFtpConfigEntitiesBySchedulingEnabledIsTrue();
 }

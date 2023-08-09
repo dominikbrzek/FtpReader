@@ -19,7 +19,8 @@ public class FtpConfigDetails {
     public String address;
     public String login;
     public String password;
+    public String filePath;
     public Integer port;
-    public Boolean shedullingEnabled;
+    public Boolean schedulingEnabled;
 
 }

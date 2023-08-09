@@ -18,9 +18,9 @@ import java.util.UUID;
  * @author dobr
  */
 @Entity
-@Table(name = "FTP_CONFIG")
 @Getter
 @Setter
+@Table(name = "FTP_CONFIG")
 public class FtpConfigEntity {
 
     @Id
@@ -41,6 +41,9 @@ public class FtpConfigEntity {
 
     @Column(name = "SERVER_PASSWORD")
     private String password;
+
+    @Column(name = "FILE_PATH")
+    private String filePath;
 
     @Column(name = "SERVER_PORT")
     private Integer port;

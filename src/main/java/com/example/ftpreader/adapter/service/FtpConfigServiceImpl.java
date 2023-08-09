@@ -51,7 +51,7 @@ public class FtpConfigServiceImpl implements FtpConfigService {
                         .address(e.getAddress())
                         .password(e.getPassword())
                         .port(e.getPort())
-                        .shedullingEnabled(e.isSchedulingEnabled())
+                        .schedulingEnabled(e.isSchedulingEnabled())
                         .build())
                 .orElseThrow();
     }
@@ -89,11 +89,14 @@ public class FtpConfigServiceImpl implements FtpConfigService {
         if (request.getAddress() != null) {
             entity.setAddress(request.getAddress());
         }
+        if (request.getFilePath() != null) {
+            entity.setFilePath(request.getFilePath());
+        }
         if (request.getPort() != null) {
             entity.setPort(request.getPort());
         }
-        if (request.getShedullingEnabled() != null) {
-            entity.setSchedulingEnabled(request.getShedullingEnabled());
+        if (request.getSchedulingEnabled() != null) {
+            entity.setSchedulingEnabled(request.getSchedulingEnabled());
         }
         repository.save(entity);
     }

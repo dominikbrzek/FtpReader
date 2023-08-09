@@ -2,6 +2,7 @@ package com.example.ftpreader.adapter.utils;
 
 import lombok.experimental.UtilityClass;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -21,6 +22,13 @@ public class StreamUtils {
             return Stream.empty();
         }
         return list.stream();
+    }
+
+    public static <T> Stream<T> toStreamSafe(T[] list) {
+        if (list == null) {
+            return Stream.empty();
+        }
+        return Arrays.stream(list);
     }
 
 }

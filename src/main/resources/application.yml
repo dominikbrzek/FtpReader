@@ -11,3 +11,9 @@ spring:
     show_sql: true
   flyway:
     enabled: false
+
+ftp:
+  scheduler:
+    enabled: true
+    cron: "0/5 * * * * *"
+  download-path: "src/main/resources/downloaded"
