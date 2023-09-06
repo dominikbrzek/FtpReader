@@ -4,6 +4,7 @@ import lombok.experimental.UtilityClass;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Stream;
 
 /**
@@ -30,5 +31,12 @@ public class StreamUtils {
         }
         return Arrays.stream(list);
     }
+    public static <T> Stream<T> toStreamSafe(Set<T> set) {
+        if (set == null) {
+            return Stream.empty();
+        }
+        return set.stream();
+    }
+
 
 }
